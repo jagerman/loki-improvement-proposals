@@ -15,7 +15,7 @@ Replaces (*optional): LIP number(s)
 <!--"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the LIP.-->
 If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the LIP.
 
-Example image ![alt text](https://github.com/loki-project/assets/lip-X/example.png"Example Image 1")
+Anywhere in your LIP you can also include images which can be included by adding the file to the assets folder and referencing as belowExample image ![alt text](https://github.com/KeeJef/EIPs/blob/master/assets/lip-X/example.png "Example Image 1")
 
 
 ## Abstract

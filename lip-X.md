@@ -1,13 +1,14 @@
 
+---
 LIP Number: Assigned by Editor
-Title: Title [Foundation Vote, Service Node Vote, No Vote] <!-- Titles should contain the relevant information for whether the LIP is part of a Service Node Vote, or requires a vote from the foundation  -->
+Title: Title [Foundation Vote, Service Node Vote, No Vote] <!-- Titles should contain the relevant information for whether the LIP is part of a Service Node Vote, or requires a vote from the foundation if neither is applicable then you can add [No Vote]  -->
 Author: <a list of the author's or authors' name(s) and/or username(s), or name(s) and email(s), e.g. (use with the parentheses or triangular brackets): FirstName LastName (@GitHubUsername), FirstName LastName <foo@bar.com>, FirstName (@GitHubUsername) and GitHubUsername (@GitHubUsername)>
 Status: Draft
 Type: (Core, Networking, Interface, Other)
 Created: date (yyyy-mm-dd) 
 Requires (*optional): LIP number(s)
 Replaces (*optional): LIP number(s)
-
+---
 
 <!--You can leave these HTML comments in your merged LIP and delete the visible duplicate text guides, they will not appear and may be helpful to refer to if you edit it again. This is the suggested template for new LIPs. Note that an LIP number will be assigned by an editor. When opening a pull request to submit your LIP.-->
 

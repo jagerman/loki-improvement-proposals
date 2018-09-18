@@ -1,4 +1,3 @@
-
 ---
 LIP Number: Assigned by Editor
 Title: Title [Foundation Vote, Service Node Vote, No Vote] <!-- Titles should contain the relevant information for whether the LIP is part of a Service Node Vote, or requires a vote from the foundation if neither is applicable then you can add [No Vote]  -->

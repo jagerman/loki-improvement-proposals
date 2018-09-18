@@ -15,6 +15,9 @@ Replaces (*optional): LIP number(s)
 <!--"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the LIP.-->
 If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the LIP.
 
+Example image ![alt text](https://github.com/loki-project/assets/lip-X/example.png"Example Image 1")
+
+
 ## Abstract
 <!--A short (~200 word) description of the technical issue being addressed.-->
 A short (~200 word) description of the technical issue being addressed.

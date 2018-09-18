@@ -8,10 +8,9 @@ LIPs can also act as supplementary documents for funding applications  to the Lo
 
 Anyone is free to propose an LIP, if they follow the formatting rules setout in this document. 
 
- 1. Review [LIP-1](LIPS/lip-1.md).
- 2. Fork the repository by clicking "Fork" in the top right.
- 3. Add your LIP to your fork of the repository. There is a [template LIP here](lip-X.md).
- 4. Submit a Pull Request to Loki's [LIPs repository](https://github.com/ethereum/EIPs).
+ 1. Fork the repository by clicking "Fork" in the top right.
+ 2. Add your LIP to your fork of the repository. There is a [template LIP here](lip-X.md).
+ 3. Submit a Pull Request to Loki's [LIPs repository](https://github.com/ethereum/EIPs).
 
 Your first PR should be a first draft of the final LIP. An editor will manually review the first PR for a new LIP and assign it a number before merging it. All discussion should occur inside of the LIP.
 

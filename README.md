@@ -1,5 +1,5 @@
 # LIP (Loki Improvement Proposal)
-Loki Improvement Proposals (LIPs) are the formalized methods by which the Loki Project Team, external contributors or contractors can make proposals for any major Loki or Lokinet upgrades, this can including core protocol specifications, client APIs, and additional features. LIP's should also be used to describe any Major changes that go before Loki Service Nodes to vote on outside of the Loki funding system. 
+Loki Improvement Proposals (LIPs) are the formalized methods by which the Loki Project Team, external contributors or contractors can make proposals for any major Loki or Lokinet upgrades, this can including core protocol specifications, client APIs, and additional features. LIP's should also be used to describe any Major changes that go before Loki Service Nodes to vote on, outside of non relevant requests handled oy the Loki funding system. 
 
 
 LIPs can also act as supplementary documents for funding applications  to the Loki foundation, or Loki funding system.
@@ -21,23 +21,19 @@ There are two main progression routes for LIP's
 
 **Submitting your LIP for Vote**
 
-If you are submitting your LIP for vote by the Loki Foundation or the Loki Service Nodes you should tag your request as per LIP 1 Specs. If the Foundation or Service Nodes approve your LIP then an editor will tag your LIP as finalized. If the Service Nodes or the Foundation denies your LIP then your pull request will be closed, you are free to make another proposal which addresses any concerns raised by the foundation of Service Node operators and re-proposed your LIP.
+If you are submitting your LIP for vote by the Loki Foundation or the Loki Service Nodes you should tag the title of your request as per LIP-x Specs with either [Foundation Vote] or [Service Node Vote]. If the Foundation or Service Nodes approve your LIP then an editor will tag your LIP as finalized. If the Service Nodes or the Foundation denies your LIP then your pull request will be closed, you are free to make another proposal which addresses any concerns raised by the foundation or Service Node operators and re-propose your LIP.
 
 **LIP Assessment by the Loki Project Team**
 
-If you believe your LIP does not need to be voted on by the Loki Foundation or Service Nodes then you can tag your EIP as a [No Vote]. If a LIP is tagged as a no vote your LIP editor may still refer your LIP to a vote by the Foundation or Service Nodes if they believe the LIP is controversial or the discussion around the LIP does not reach consensus.
-If the LIP does not need to go to a vote then the LIP editor should decide when the LIP ready to be marked as final. 
+If you believe your LIP does not need to be voted on by the Loki Foundation or Service Nodes then you can tag your EIP as a [No Vote]. If a LIP is tagged with [No Vote] your LIP editor may still refer your LIP to a vote by the Foundation or Service Nodes if they believe the LIP is controversial or the discussion around the LIP does not reach consensus.
+If the LIP does not need to go to a vote then the LIP editor should decide when the LIP is ready to be marked as final. 
 
 **LIP Finalized**
 
-Once an LIP is finalized the Loki development team will work alongside you to help you Merge your changes into the development branch of Loki, any pull request to Loki should reference relevant LIPs if the change is major. if your LIP is marked as Final but does not yet have developed code, we encourage regular communication to the community using the LIP pull request as a sounding board.
+Once an LIP is finalized the Loki development team will work alongside you to help you merge your changes into the development branch of Loki, any pull request to Loki should reference relevant LIPs if the change is major. if your LIP is marked as Final but does not yet have developed code, we encourage regular communication to the community using the LIP pull request as a sounding board.
 
 # LIP Status Terms
 * **Draft** - an LIP that is undergoing rapid iteration and changes
 * **Last Call** - an LIP that is done with its initial iteration and ready for review by a wide audience
-* **Denied** - a core EIP that has been in Last Call for at least 2 weeks and any technical changes that were requested have been addressed by the author
-* **Final** - an EIP that the Core Devs have decide to implement and release in a future hard fork or has already been released in a hard fork
-
-# Preferred Citation Format
-
-The canonical URL for a EIP that has achieved draft status at any point is at https://eips.ethereum.org/. For example, the canonical URL for ERC-165 is https://eips.ethereum.org/EIPS/eip-165.
+* **Denied** - an LIP that has been rejected by either a vote from the Loki Service Nodes, the Loki foundation or the LIP editor.
+* **Final** - an LIP that the Loki Project team have decide to implement and release in a future hard fork or has already been released in a hard fork

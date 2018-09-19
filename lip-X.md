@@ -24,7 +24,7 @@ A short (~200 word) description of the technical issue being addressed.
 
 ## Motivation
 <!--The motivation is critical for LIPs that want to change the Loki or Lokinet protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the LIP solves. LIP submissions without sufficient motivation may be rejected outright.-->
-The motivation is critical for LIPs that want to change the Loki or Lokinet protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the LIP solves. LIP submissions without sufficient motivation may be rejected outright.
+Motivation is critical for LIPs that want to change the Loki or Lokinet protocol. Your explanation should clearly explain why the existing protocol specification is inadequate to address the problem that the LIP solves. LIP submissions without sufficient motivation may be rejected outright.
 
 ## Specification
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations of Loki or Lokinet on Different platforms-->
@@ -41,7 +41,7 @@ All LIPs that introduce backwards incompatibilities must include a section descr
 
 ## Implementation
 <!--The code implementations of a LIP do not need to be completed before the LIP is given the "Final" status, Generally we encourage LIP's to present a written only proposal to reach consensus on the specification and proposal rationale before writing code, however parties involved in decision making can still find "rough code" is useful when it comes deciding the outcome of your LIP. If you have developed code or a rough implementation you should link it here-->
-The code implementations of a LIP do not need to be completed before the LIP is given the "Final" status, Generally we encourage LIP's to present a written only proposal to reach consensus on the specification and proposal rationale before writing code, however parties involved in decision making can still find "rough code" is useful when it comes deciding the outcome of your LIP. If you have developed code or a rough implementation you should link it here
+The code implementations of a LIP do not need to be completed before the LIP is given the "Final" status, Generally we encourage LIP's to present a written only proposal to reach consensus on the specification and proposal rationale before writing code, however parties involved in decision making can still find "rough code" useful when it comes deciding the outcome of your LIP. If you have developed code or a rough implementation you should link it here.
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).

@@ -25,7 +25,7 @@ If you are submitting your LIP for vote by the Loki Foundation or the Loki Servi
 
 **LIP Assessment by the Loki Project Team**
 
-If you believe your LIP does not need to be voted on by the Loki Foundation or Service Nodes then you can tag your EIP as a [No Vote]. If a LIP is tagged with [No Vote] your LIP editor may still refer your LIP to a vote by the Foundation or Service Nodes if they believe the LIP is controversial or the discussion around the LIP does not reach consensus.
+If you believe your LIP does not need to be voted on by the Loki Foundation or Service Nodes then you can tag your LIP as a [No Vote]. If a LIP is tagged with [No Vote] your LIP editor may still refer your LIP to a vote by the Foundation or Service Nodes if they believe the LIP is controversial or the discussion around the LIP does not reach consensus.
 If the LIP does not need to go to a vote then the LIP editor should decide when the LIP is ready to be marked as final. 
 
 **LIP Finalized**

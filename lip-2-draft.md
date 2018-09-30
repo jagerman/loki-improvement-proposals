@@ -1,4 +1,4 @@
-**Please forgive my lack of experience with Git and all things related**
+**preface note: Please forgive my lack of experience with Git and all things related**
 ## LIP-2-draft
 #### Proposal to add a simple feature to Loki wallet software - NO VOTE
 ##### Authored by : Biker (@CryptoBiker)

@@ -19,7 +19,7 @@ Motivation for this LIP is strait forward. Users desire the ability to export th
 
 **Technical Specifications**
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations of Loki or Lokinet on Different platforms-->
-CSV format is requested but the author of this LIP defers judgement of what format the data will be exported in so long as it meets the desired functionality of this proposal.
+CSV format is requested, but the author of this LIP defers judgement to Loki developers of what file format the data should be exported in, so long as it meets the desired functionality of this proposal.
 
 **Rationale for this LIP**
 <!--The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work. The rationale may also provide evidence of consensus within the community, and should discuss important objections or concerns raised during discussion.-->

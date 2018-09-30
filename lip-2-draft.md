@@ -4,7 +4,7 @@
 ##### Authored by : Biker (@CryptoBiker)
 ##### September 30th 2018
 ## Status: Draft
-##Type: Feature addition to wallet software
+## Type: Feature addition to wallet software
 
 
 <!--You can leave these HTML comments in your merged LIP and delete the visible duplicate text guides, they will not appear and may be helpful to refer to if you edit it again. This is the suggested template for new LIPs. Note that an LIP number will be assigned by an editor. When opening a pull request to submit your LIP.-->

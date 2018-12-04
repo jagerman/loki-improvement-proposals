@@ -2,7 +2,7 @@
 
 ```
 Metadata 
-LIP Number: 2 
+LIP Number: 3 
 Title: Service Node Checkpointing [Foundation Vote] 
 Author/s: Kee Jefferys, Jason Rhinelander
 Status: Draft

@@ -10,7 +10,7 @@ Type: (Core)
 Created: date (2018-11-30) 
 ```
 
-## 1 Simple summary 
+## 1 Simple Summary 
 
 Consensus via Proof of Work in Loki presents a significant risk of 51% attack. To mitigate this risk and increase security, Loki should leverage the existing Service Node network and integrate Service Nodes more closely into our Consensus mechanism. This proposal, if passed, would allow Service Nodes to validate the existing PoW chain to prevent reorganisations of the blockchain greater than *N* blocks.
 
@@ -56,7 +56,7 @@ Although the phenomenon of the roaming hashrate would generally be considered as
  
 *Figure 2 : example of a hashrate attack causing difficulty jamming on the Karbowanec network*
 
-TThe proliferation of services like NiceHash and MiningRigRentals make the renting of hashrate easy to even the most basic of attacker. Although the same 51% attacks have always been possible, attackers previously would either have to permanently purchase hardware totaling 51% of the network hashrate, or convince miners to use their malicious pool. These options typically involved large setup costs in hardware, time, or social efforts (and often all three).
+The proliferation of services like NiceHash and MiningRigRentals make the renting of hashrate easy to even the most basic of attacker. Although the same 51% attacks have always been possible, attackers previously would either have to permanently purchase hardware totaling 51% of the network hashrate, or convince miners to use their malicious pool. These options typically involved large setup costs in hardware, time, or social efforts (and often all three).
 
 Miners can now spontaneously set up a private pool with modified malicious software, then rent the needed hashrate to perform a double spend with relative ease. Although this specific issue has not directly affected Loki, there have been notable attacks on a number of Cryptonote coins. This attack becomes easier as the hashing algorithm becomes more available and liquid on NiceHash relative to a coin network’s actual hashrate. 
 
@@ -70,7 +70,7 @@ This comes as a particular concern for Loki as we have repeatedly lowered reward
 
 #### 3.1.3 Monopooling
 
-We will use the term ‘monopooling,’  which refers to single pools which dominate more than 51% of the hashrate of a coin’s network. This is a phenomenon which mostly affects small, GPU-mineable coins. The monopools themselves are not necessarily malicious, although provided the right incentive from an attacker they can exert their hashrate over a coin network. Monopooling seems to result as the culmination of many of the above phenomenon, being particularly endemic in coins that have an issues with roaming hashrate.
+We will use the term ‘monopooling,’  which refers to single pools which dominate more than 51% of the hashrate of a coin’s network. This is a phenomenon which mostly affects small, GPU-mineable coins. The monopools themselves are not necessarily malicious, although provided the right incentive from an attacker they can exert their hashrate over a coin network. Monopooling seems to be the culmination of many of the above phenomenon, being particularly endemic in coins that have issues with roaming hashrate.
 
 If we consider a miner who switches between profitable coins using the CryptoNight hashing algorithm, they might switch networks multiple times a day. The most profitable strategy for this miner is not always to seek the pool with the lowest fees, but to join a pool which will will produce more blocks and yield a higher payout in the short time that they are mining. This reduces the variance during the time that they do mine, ensuring that hashes are seldom wasted. If these pools reach over 50% of the hashrate they can also offer advantages to miners. For example in the event of a hard fork, the community and developers of a coin may seek to legitimise the longest chain as the the legitimate chain meaning profits are unlikely to be lost in a split.
 
@@ -88,24 +88,24 @@ Although these pools are primarily benign, they still pose a threat due to the c
 
 As a result of the above problems, I propose that Loki utilise Service Nodes to validate the existing Proof of Work chain after *N* blocks.
 
-### 4.2 Reorganisation limits
+### 4.2 Reorganisation Limits
 
-‘Checkpoints’ are one way to prevent reorganisations greater than *N* blocks. Adding a checkpoint to a blockchain dictates that once the checkpoint is reached, the normal rules of Proof of Work are ignored. This means that when a checkpoint is set, block reorganizations past the checkpoint are invalid, even if the proposed candidate for reorganisation contains a longer chain with higher difficulty targets.
+‘Checkpoints’ are one way to prevent reorganisations greater than *N* blocks. Adding a checkpoint to a blockchain dictates that once the checkpoint is reached, the normal rules of Proof of Work are ignored. This means that when a checkpoint is set, block reorganisations past the checkpoint are invalid, even if the proposed candidate for reorganisation contains a longer chain with higher difficulty targets.
 
-The other, more naive approach is to simply cap reorganisations greater than *P* blocks. However there are serious problems with this approach, if an attacker can produce a chain of length *P*+1 and submit it to different edge of the network as the non attacking chain is being checkpointed, then the network will diverge and will be unable to merge back into a single chain, effectively permanently forking the chain. This attack could, for example, deliberately target an exchange to put the exchange on a fork controlled by the attacker but distinct from the main network until manual maintenance is undertaken by the exchange to re-sync to the proper network chain. This kind of attack is prevented by Service Node checkpointing, as the attacker would need their two chains to be signed by the quorum to create a conflict.
+The other, more naive approach is to simply cap reorganisations greater than *P* blocks. However there are serious problems with this approach, if an attacker can produce a chain of length *P*+1 and submit it to a different edge of the network as the non attacking chain is being checkpointed, then the network will diverge and will be unable to merge back into a single chain, effectively permanently forking the chain. This attack could, for example, deliberately target an exchange to put the exchange on a fork controlled by the attacker but distinct from the main network until manual maintenance is undertaken by the exchange to re-sync to the proper network chain. This kind of attack is prevented by Service Node checkpointing, as the attacker would need their two chains to be signed by the quorum to create a conflict.
 
-### 4.3 Checkpointing rules
+### 4.3 Checkpointing Rules
 
 Already implemented in Loki are Service Node quorums, which dictate that each block 10 random Service Nodes are selected based on the hash of the 10th previous block to assess the uptime proofs of other Service Nodes. To validate the blockchain every *N* blocks a new class of Service Node quorums should be selected and be given an additional task, which is to add a checkpoint to the blockchain each time a period *N* is reached.
 
-A Service Node checkpoint should consist of a blockhash, a block height and the signature of a super majority (66%) of the Service nodes in the relevant quorum. To avoid miners colluding to ignore checkpoints and reorg past the hard limits, the checkpoint should not be included as a transaction in the blockchain. Rather, the checkpoint data should be appended to the ‘top’ of the block after the fact. All data inside of blocks will maintain immutability, but clients will append the Service Node data outside of the hashed data.
+A Service Node checkpoint should consist of a blockhash, a block height and the signature of a super majority (66%) of the Service Nodes in the relevant quorum. To avoid miners colluding to ignore checkpoints and reorg past the hard limits, the checkpoint should not be included as a transaction in the blockchain. Rather, the checkpoint data should be appended to the ‘top’ of the block after the fact. All data inside of blocks will maintain immutability, but clients will append the Service Node data outside of the hashed data.
 
 <img src="../assets/lip-2/servicenodedata.PNG" align="middle" width="400">
 
  *Figure 5: example of a Checkpointed block*
 
 
-#### Choosing chains
+#### Choosing Chains
 
 A Service Node quorum is prevented from checkpointing more than one chain at any time, so behaviour must be written for what should occur when the quorum disagrees on which chain should be checkpointed. First, before any decision is made, each node should share their candidate checkpoint chain with all other nodes in the quorum.
 
@@ -117,7 +117,7 @@ Some conditions should be established beyond normal block validation:
 3. If two chains of proof of work are produced with the same cumulative difficulty, Service Nodes should choose the chain based on the lowest hamming distance of the chain tip’s blockhash to 0, and;
 4. The latest checkpoint *C3* can invalidate two checkpoints back to *C1*.
 
-Once Service nodes internally agree on the correct chain, they should all produce a signed copy of the block which should then be submitted to the network. If valid (containing a super majority of Service Node signatures) then the extra Service Node data should be appended to the relevant checkpointed block in all client databases.
+Once Service Nodes internally agree on the correct chain, they should all produce a signed copy of the block which should then be submitted to the network. If valid (containing a super majority of Service Node signatures) then the extra Service Node data should be appended to the relevant checkpointed block in all client databases.
 
 #### Why Have More Than One Checkpoint?
 
@@ -135,7 +135,7 @@ As discussed, each checkpoint requires that data be appended to the top of block
 
 When checkpointing or setting reorganisation limits, the question must always be asked: can the blockchain self repair, and in what situation could the blockchain become stuck or permanently forked?
 
-If we imagine a protocol bug that causes the blockchain to stop after a reorganisation point or an invalid block is checkpointed, then there is no way to continue the chain, since the longer chain can never reorganise past the first checkpoint on chain 1 as shown in figure 3.
+If we imagine a protocol bug that causes the blockchain to stop after a reorganisation point or an invalid block is checkpointed, then there is no way to continue the chain, since the longer chain can never reorganise past the first checkpoint on chain 1 as shown in figure 6.
 
 <img src="../assets/lip-2/blockchainexample.PNG" width="700">
 
@@ -147,17 +147,17 @@ The only way to overcome this issue is to allow Service Nodes to simultaneously 
 
 *Figure 7: Blockchain as measured by signature weight*
 
-This leads us to the conclusion that chain repairability and double spend protection are mutually exclusive, since any transactions that were accepted in chain 1 (figure 4) could be reversed in chain 2. 
+This leads us to the conclusion that chain reparability and double spend protection are mutually exclusive, since any transactions that were accepted in chain 1 (figure 7) could be reversed in chain 2. 
 
 ### 4.4 Proposed Checkpointing in Loki
 
 After assessing the above issues I believe Loki should value double spend protection over absolute chain repariablity for a couple of reasons:
 
-1. Chain repairability is already a problem present in Loki’s current PoW. If a chain of blocks is mined and then there is a bug encountered, then that bug is likely to cause an issue for all miners, in this case the Loki team or a third party would have to release new software which would allow miners and clients to sync past the faulty block. This would be the same scenario if an invalid block was to be checkpointed. Thus the introduction of checkpoints doesn’t significantly impact the potential consequences of a bug that causes a chain pause.
+1. Chain reparability is already a problem present in Loki’s current PoW. If a chain of blocks is mined and then there is a bug encountered, then that bug is likely to cause an issue for all miners, in this case the Loki team or a third party would have to release new software which would allow miners and clients to sync past the faulty block. This would be the same scenario if an invalid block was to be checkpointed. Thus the introduction of checkpoints doesn’t significantly impact the potential consequences of a bug that causes a chain pause.
 
 2. An active double spend on the Loki network is likely to cause more damage to the ecosystem than a temporary chain pause. Double spends can shake confidence and erode the trust of users and merchants which accept and exchange Loki, a chain pause may be a lower impact event, since no funds are lost and merchants/exchanges can resume normally after the pause.
 
-### 4.5 Rewards and consequences
+### 4.5 Rewards and Consequences
 
 This LIP does not seek to increase the Service Node block reward, however it would add additional conditions to a Service Node receiving its normal portion of the block rewards. The primary things we want to prevent Service Nodes from doing are:
 
@@ -178,7 +178,7 @@ Rule 3 can be solved by investigating each checkpoint for all Service Node signa
 
 Because Service Node quorums are deterministically selected before checkpointing blocks and Service Node IP addresses are publicly stored on a DHT in Lokinet, it is important to consider an attacker who would seek to disrupt consensus communications. Without protections an attacker could carry out a DDoS attack as Service Nodes were checkpointing the chain in an attempt to disrupt communications and prevent the chain from successfully being checkpointed. Because a super majority of quorum signatures is required to sign a block and the quorum size is 20, the attack would only need to prevent communication of 18 nodes over the course of two consecutive checkpoints to freeze the blockchain. 
 
-The novel protection for this attack is Service nodes having the ability to whitelist other nodes inside of their own active quorum when Service Nodes detects an attack. Practically speaking, Service Nodes would turn on this protection automatically when the previous quorum has failed to sign a block. This method allows nodes to communicate and come to consensus on the correct chain to sign, without accepting connections from unknown IP addresses potentially attempting DDoS attacks. Once finished checkpointing the quorum should again regain normal functionality.  
+The novel protection for this attack is Service Nodes having the ability to whitelist other nodes inside of their own active quorum when Service Nodes detects an attack. Practically speaking, Service Nodes would turn on this protection automatically when the previous quorum has failed to sign a block. This method allows nodes to communicate and come to consensus on the correct chain to sign, without accepting connections from unknown IP addresses potentially attempting DDoS attacks. Once finished checkpointing the quorum should again regain normal functionality.  
 
 ### 4.8 Considerations for Merchants and Exchanges
 

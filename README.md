@@ -1,6 +1,7 @@
 # LIP (Loki Improvement Proposal)
 Loki Improvement Proposals (LIPs) are the formalized methods by which the Loki Project Team, external contributors or contractors can make proposals for any major Loki or Lokinet upgrades, this can including core protocol specifications, client APIs, and additional features. LIP's should also be used to describe any Major changes that go before Loki Service Nodes to vote on, outside of non relevant requests handled oy the Loki funding system. 
 
+A LIP is supposed to be championed by the proposer, this means that LIP’s do not always present an objective view of the situation, ultimately it is the role of the Service Nodes or The Loki Foundation (depending on the proposed voter) to decide of the efficacy of a LIP, these decisions should be impacted by community sentiment and dissenting technical arguments.  
 
 LIPs can also act as supplementary documents for funding applications  to the Loki foundation, or Loki funding system.
 

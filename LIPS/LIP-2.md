@@ -1,5 +1,5 @@
 **preface note: Please forgive my lack of experience with Git and all things related**
-## LIP-2-draft
+## LIP-2
 #### Proposal to add a simple feature to Loki wallet software - NO VOTE
 ##### Authored by : Biker (@CryptoBiker)
 ##### September 30th 2018

@@ -12,7 +12,7 @@ Created: date (2018-11-30)
 
 ## 1 Simple Summary 
 
-Consensus via Proof of Work in Loki presents a significant risk of 51% attack. To mitigate this risk and increase security, Loki should leverage the existing Service Node network and integrate Service Nodes more closely into our Consensus mechanism. This proposal, if passed, would allow Service Nodes to validate the existing PoW chain to prevent reorganisations of the blockchain greater than *N* blocks.
+Consensus via Proof of Work in Loki presents a significant risk of 51% attack. To mitigate this risk and increase security, Loki should leverage the existing Service Node network and integrate Service Nodes more closely into our consensus mechanism. This proposal, if passed, would allow Service Nodes to validate the existing PoW chain to prevent reorganisations of the blockchain greater than *N* blocks.
 
 
 ## 2 Abstract
@@ -78,7 +78,7 @@ On a number of coins this leads to large monopools. By measuring the percentage 
 
 <img src="../assets/lip-2/monopoolsreplace.PNG" width="800">
 
-*Figure 4: Shows the % network hashrate of the largest pool on a number of GPU mineable coins*
+*Figure 4: Shows the % network hashrate of the largest pool on a number of GPU mineable coins as of 01/12/2018*
 
 Although these pools are primarily benign, they still pose a threat due to the control they have over the network. It would be feasible for an attacker to bribe or hack a pool operator to perform a double spend.
 

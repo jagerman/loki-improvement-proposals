@@ -5,7 +5,7 @@ Metadata
 LIP Number: 3 
 Title: Service Node Checkpointing [Foundation Vote] 
 Author/s: Kee Jefferys, Jason Rhinelander
-Status: Draft
+Status: Final
 Type: (Core)
 Created: date (2018-11-30) 
 ```
@@ -196,6 +196,8 @@ This proposal is not backwards compatible and will require a hard fork to enact.
 ## Implementation 
 
 This LIP will be opened for public discussion prior to a Foundation vote. If the vote is successful, the code will be written and submitted as a pull request which will be open to community review. These developments shall be linked here as they occur.
+
+**LIP-3 Has been approved by the Loki Foundation, we will be moving forward with progress over the coming months, progress will be reflected in our weekly dev updates**
 
 ## References 
 

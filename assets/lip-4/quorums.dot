@@ -1,0 +1,24 @@
+digraph quorums {
+    node [shape=record];
+    //splines=line;
+    edge [arrowsize=.75];
+    blocks [label="{height:|quorum:} |... |{{<h0>1000 |<h1> 1001 |<h2> 1002 |<h3> 1003 |<h4> 1004}|Q₁}|{{<h5>1005 |<h6> 1006 |<h7> 1007 |<h8> 1008 |<h9> 1009}|Q₂}|{{<h10>1010 |<h11> 1011 |<h12> 1012 |<h13> 1013 |<h14> 1014}|Q₃}| ..."]
+    tx1 [label="TX₁\nh=1002", color=mediumblue, fontcolor=mediumblue]
+    tx1 -> blocks:h0 [color=mediumblue, style=dotted]
+    tx1 -> blocks:h1:n [color=mediumblue, style=dotted]
+    tx1 -> blocks:h2 [color=mediumblue]
+    tx1 -> blocks:h3 [color=mediumblue, style=dashed]
+    tx1 -> blocks:h4 [color=mediumblue, style=dashed]
+    tx2 [label="TX₂\nh=1006", color=darkgreen, fontcolor=darkgreen]
+    tx2 -> blocks:h4 [color=darkgreen, style=dotted]
+    tx2 -> blocks:h5 [color=darkgreen, style=dotted]
+    tx2 -> blocks:h6 [color=darkgreen]
+    tx2 -> blocks:h7 [color=darkgreen, style=dashed]
+    tx2 -> blocks:h8 [color=darkgreen, style=dashed]
+    tx3 [label="TX₃\nh=1009", color=firebrick, fontcolor=firebrick]
+    tx3 -> blocks:h7 [color=firebrick, style=dotted]
+    tx3 -> blocks:h8 [color=firebrick, style=dotted]
+    tx3 -> blocks:h9 [color=firebrick]
+    tx3 -> blocks:h10 [color=firebrick, style=dashed]
+    tx3 -> blocks:h11 [color=firebrick, style=dashed]
+}

@@ -1,0 +1,25 @@
+digraph bqcomm {
+    node [shape=record];
+
+    q0 [label="{{  Q  | SN₁ | SN₂ | SN₃ | SN₄ | SN₅ | SN₆ | SN₇ | SN₈ | SN₉ | SN₁₀}
+             | { SN₁ |  x  |  i  |  i  |  i  |  i  |  i  |  o  |  o  |  o  |  o  }
+             | { SN₂ |  o  |  x  |  i  |  i  |  i  |  i  |  i  |  o  |  o  |  o  }
+             | { SN₃ |  o  |  o  |  x  |  i  |  i  |  i  |  i  |  i  |  o  |  o  }
+             | { SN₄ |  o  |  o  |  o  |  x  |  i  |  i  |  i  |  i  |  i  |  o  }
+             | { SN₅ |  o  |  o  |  o  |  o  |  x  |  i  |  i  |  i  |  i  |  i  }
+             | { SN₆ |  o  |  o  |  o  |  o  |  o  |  x  |  i  |  i  |  i  |  i  }
+             | { SN₇ |  i  |  o  |  o  |  o  |  o  |  o  |  x  |  i  |  i  |  i  }
+             | { SN₈ |  i  |  i  |  o  |  o  |  o  |  o  |  o  |  x  |  i  |  i  }
+             | { SN₉ |  i  |  i  |  i  |  o  |  o  |  o  |  o  |  o  |  x  |  i  }
+             | { SN₁₀|  i  |  i  |  i  |  i  |  o  |<x1>o|<x2>o|<x3>o|<x4>o|<x5>x}}
+    "]
+    q1 [label="Q' | <i1> SN₁ | <i2> SN₂ | <i3> SN₃ | <i4> SN₄ | <i5> SN₅ | ..."];
+    q0:x1 -> q1:i1
+    q0:x2 -> q1:i2
+    q0:x3 -> q1:i3
+    q0:x4 -> q1:i4
+    q0:x5 -> q1:i5
+
+    rankdir=LR;
+}
+    

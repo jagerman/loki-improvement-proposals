@@ -1,0 +1,67 @@
+digraph G {
+    lokid [label="lokid\n@ height h", style=filled, shape=box];
+    subgraph cluster_quorum1 {
+        node [style=filled, shape=box, color=darkgreen, fontcolor=white];
+        color=darkgreen;
+        fontcolor=darkgreen;
+        label="Blink quorum Q for height h";
+        labelloc="t";
+        SN_1[label="SN"];
+        SN_2[label="SN"];
+        SN_3[label="SN"];
+    };
+    subgraph cluster_quorum2 {
+        node [style=filled, shape=box, color=darkgreen, fontcolor=white, ordering=out];
+        color=darkgreen;
+        fontcolor=darkgreen;
+        label="Blink quorum Q' for height h";
+        labelloc="t";
+        SN_21[label="SN"];
+        SN_22[label="SN"];
+        SN_23[label="SN"];
+    };
+    wallet [shape=box];
+    wallet -> lokid [label="①"];
+    lokid -> SN_1 [label="②"];
+    lokid -> SN_21 [label="②"];
+
+    SN_1 -> lokid [label="⑤"]
+    SN_21 -> lokid [label="⑤"]
+
+    {
+        edge[constraint=false, color=blue, fontcolor=blue];
+        SN_1:s -> SN_3
+        SN_1:s -> SN_2  [xlabel="③"]
+
+        SN_21:s -> SN_22 [xlabel="③   "]
+        SN_21:s -> SN_23
+    }
+
+    {
+        edge[constraint=false, color="crimson", fontcolor="crimson"]
+        SN_1:n -> SN_2:n [dir=both, xlabel="④"]
+        SN_3:e -> SN_1:w [xlabel="④"]
+        SN_1 -> SN_3
+        SN_2:e -> SN_3:w [xlabel="④"]
+        SN_3 -> SN_2
+
+        SN_21:e -> SN_22:w [xlabel="④"]
+        SN_22 -> SN_21
+        SN_21:n -> SN_23:n [xlabel="④",dir=both]
+        SN_22:e -> SN_23:w
+        SN_23 -> SN_22 [xlabel="④"]
+    }
+
+    peers[label="lokid p2p network", shape=egg, style=filled];
+    peers_hack[style=invis]
+    SN_1 -> peers_hack -> peers [style=invis]
+    SN_21 -> peers_hack -> peers [style=invis]
+    SN_1 -> peers [xlabel="⑤       "]
+    SN_2 -> peers
+    SN_3 -> peers
+    SN_21 -> peers
+    SN_22 -> peers [xlabel="⑤"]
+    SN_23 -> peers
+    lokid -> wallet [label="⑥",constraint=false];
+
+}

@@ -1,0 +1,8 @@
+.footnotes {
+    margin-top: 64px;
+}
+.footnotes:before {
+    content: "Footnotes";
+    font-size: 32px;
+    font-style: italic;
+}
